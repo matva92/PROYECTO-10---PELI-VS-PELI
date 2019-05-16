@@ -108,3 +108,20 @@ CREATE TABLE `competencias` (
 INSERT INTO competencias (competencia)
 
 values '¿Cuál es la mejor película de todos los tiempos?', '¿Cuál es la mejor película de terror?', '¿Cuál es la película que te hizo reir mas?','¿Cuál es la mejor película de acción?','¿Cuál es la mejor película de suspenso?';
+
+
+CREATE TABLE `competencias` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `competencia` varchar(70) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)1
+)
+
+CREATE TABLE votos (
+  id int(11) unsigned NOT NULL AUTO_INCREMENT,
+  pelicula_id int(11) unsigned,
+  competencia_id int(11) unsigned,
+  FOREIGN KEY (pelicula_id) REFERENCES pelicula(id),
+  FOREIGN KEY (competencia_id) REFERENCES competencias(id),
+  PRIMARY KEY (id)
+);
+
